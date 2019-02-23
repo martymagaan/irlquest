@@ -1,8 +1,47 @@
+html, body, #root {
+  height: 100%;
+}
+
 .App {
+  width: 100%;
+  height: 100%;
+  background: #222;
+  color: #ccc;
+  font: 16px Arial, sans-serif;
+  line-height: 1em;
+}
+
+.container {
+  left: 0;
+  right: 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.QuestList {
+  display: flex;
+  flex: 0 0 250px;
+  border: 2px solid #ccc;
 }
 
 .QuestList ul {
-  list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0;
+  list-style-type: none;
+}
+
+.QuestList li {
+  padding: 10px 20px;
+}
+
+.QuestDetails {
+  display: flex;
+  flex: 1;
+  border: 2px solid #ccc;
+  border-left: 0;
 }
