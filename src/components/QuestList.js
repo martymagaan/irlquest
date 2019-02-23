@@ -1,8 +1,8 @@
 import React from 'react';
 
 function QuestList(props) {
-  const listQuests = props.quests.map((quest) =>
-    <li key={quest.name}>
+  const listQuests = props.quests.map((quest, index) =>
+    <li key={index.toString()}>
       {quest.name}
     </li>
   );
