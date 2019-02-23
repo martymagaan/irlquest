@@ -1,11 +1,9 @@
 import React from 'react';
 
-function QuestList() {
-  const quests = ['Quest 1', 'Quest 2', 'Quest3'];
-
-  const listQuests = quests.map((quest, index) =>
-    <li key={index}>
-      {quest}
+function QuestList(props) {
+  const listQuests = props.quests.map((quest) =>
+    <li key={quest.name}>
+      {quest.name}
     </li>
   );
 
