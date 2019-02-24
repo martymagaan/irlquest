@@ -5,9 +5,9 @@ import QuestDetails from './components/QuestDetails';
 
 function App() {
   const exampleQuests = [
-    {title: 'Quest 1'},
-    {title: 'Quest 2'},
-    {title: 'Quest 3'}
+    {title: 'Quest 1', details: 'Details of quest.'},
+    {title: 'Quest 2', details: 'Details of quest.'},
+    {title: 'Quest 3', details: 'Details of quest.'}
   ];
 
   const [quests, setQuests] = useState(exampleQuests);
@@ -22,6 +22,12 @@ function App() {
     setQuests(questsCopy);
   };
 
+  const updateDetails = (details) => {
+    const questsCopy = copyQuests();
+    questsCopy[currentQuest].details = details;
+    setQuests(questsCopy);
+  };
+
   return (
     <div className="App">
       <div className="container row">
@@ -32,6 +38,7 @@ function App() {
         <QuestDetails
           quest={quests[currentQuest]}
           updateTitle={updateTitle}
+          updateDetails={updateDetails}
         />
       </div>
     </div>
