@@ -86,4 +86,5 @@ html, body, #root {
   border: 0;
   resize: none;
   outline: none;
+  overflow: hidden;
 }
