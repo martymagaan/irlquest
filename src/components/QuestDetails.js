@@ -17,7 +17,7 @@ function QuestDetails(props) {
       />
       <textarea className="quest-details input"
         placeholder="Describe quest details"
-        onChante={handleDetailsChange}
+        onChange={handleDetailsChange}
       />
     </div>
   );
