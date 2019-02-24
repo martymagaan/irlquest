@@ -16,16 +16,18 @@ function App() {
   const copyQuests = () => quests.map(quest => ({...quest}));
   const addQuest = (quest) => setQuests([quest, ...quests]);
 
-  const updateTitle = (title) => {
+  const updateCurrentQuest = (quest) => {
     const questsCopy = copyQuests();
-    questsCopy[currentQuest].title = title;
+    questsCopy[currentQuest] = quest;
     setQuests(questsCopy);
+  }
+
+  const updateTitle = (title) => {
+    updateCurrentQuest({...quests[currentQuest], title});
   };
 
   const updateDetails = (details) => {
-    const questsCopy = copyQuests();
-    questsCopy[currentQuest].details = details;
-    setQuests(questsCopy);
+    updateCurrentQuest({...quests[currentQuest], details});
   };
 
   return (
