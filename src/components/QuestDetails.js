@@ -17,6 +17,7 @@ function QuestDetails(props) {
       />
       <textarea className="quest-details input"
         placeholder="Describe quest details"
+        value={props.quest.details}
         onChange={handleDetailsChange}
       />
     </div>
