@@ -2,10 +2,8 @@ import React from 'react';
 
 function QuestList(props) {
   const newQuest = () => {
-    props.addQuest({
-      name: 'New Quest'
-    });
-  }
+    props.addQuest({name: 'New Quest', details: ''})
+  };
 
   const listQuests = props.quests.map((quest, index) =>
     <li key={index.toString()}>
