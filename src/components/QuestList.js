@@ -6,7 +6,9 @@ function QuestList(props) {
   };
 
   const listQuests = props.quests.map((quest, index) =>
-    <li key={index.toString()}>
+    <li key={index.toString()}
+      onClick={() => props.setCurrentQuest(index)}
+    >
       {quest.title}
     </li>
   );

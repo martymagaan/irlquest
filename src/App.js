@@ -36,6 +36,7 @@ function App() {
         <QuestList
           quests={quests}
           addQuest={addQuest}
+          setCurrentQuest={setCurrentQuest}
         />
         <QuestDetails
           quest={quests[currentQuest]}
