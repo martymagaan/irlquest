@@ -27,7 +27,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   flex: 0 0 250px;
-  border: 2px solid #ccc;
+  border: 1px solid #777;
 }
 
 .QuestList ul {
@@ -48,7 +48,23 @@ html, body, #root {
 
 .QuestDetails {
   display: flex;
+  flex-direction: column;
   flex: 1;
-  border: 2px solid #ccc;
+  padding: 10px;
+  border: 1px solid #777;
   border-left: 0;
+}
+
+.quest-title-input {
+  width: 100%;
+  padding: 5px 0;
+  border: 0;
+  border-bottom: 1px solid #444;
+  background: rgba(0,0,0,0);
+  color: #ccc;
+  font-size: 18px;
+  outline: none;
+}
+.quest-title-input:focus {
+  border-bottom: 1px solid #ccc;
 }
