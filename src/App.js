@@ -10,11 +10,15 @@ function App() {
   ];
 
   const [quests, setQuests] = useState(exampleQuests);
+  const addQuest = (quest) => setQuests([quest, ...quests]);
 
   return (
     <div className="App">
       <div className="container row">
-        <QuestList quests={quests} />
+        <QuestList
+          quests={quests}
+          addQuest={addQuest}
+        />
       </div>
     </div>
   );
