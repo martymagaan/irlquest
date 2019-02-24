@@ -5,6 +5,7 @@ html, body, #root {
 .App {
   width: 100%;
   height: 100%;
+  padding: 40px 0;
   background: #222;
   color: #ccc;
   font: 16px Arial, sans-serif;
@@ -15,6 +16,7 @@ html, body, #root {
   left: 0;
   right: 0;
   width: 1200px;
+  height: 80%;
   margin: 0 auto;
 }
 
@@ -39,6 +41,10 @@ html, body, #root {
 
 .QuestList li {
   padding: 10px 20px;
+  cursor: pointer;
+}
+.QuestList li:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 .button {
@@ -50,21 +56,34 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #777;
   border-left: 0;
 }
 
-.quest-title-input {
-  width: 100%;
+.input {
   padding: 5px 0;
   border: 0;
   border-bottom: 1px solid #444;
   background: rgba(0,0,0,0);
   color: #ccc;
+  font: 16px Arial, sans-serif;
+}
+
+.quest-title-input {
+  width: 100%;
   font-size: 18px;
   outline: none;
 }
 .quest-title-input:focus {
   border-bottom: 1px solid #ccc;
+}
+
+.quest-details {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  border: 0;
+  resize: none;
+  outline: none;
 }
