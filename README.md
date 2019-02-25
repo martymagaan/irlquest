@@ -5,7 +5,7 @@ A quest menu for real life.
 ## TODO
 + Highlight selected quest
 + Confirm delete quest
-+ TIMESTAMPS
++ Timestamps
 + Completed Quests
 + Persistent data
   + Signup/Login
