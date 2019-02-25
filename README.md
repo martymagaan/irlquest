@@ -3,7 +3,6 @@
 A quest menu for real life.
 
 ## TODO
-+ Highlight selected quest
 + Confirm delete quest
 + Timestamps
 + Completed Quests
