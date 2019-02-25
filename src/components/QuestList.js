@@ -15,8 +15,10 @@ function QuestList(props) {
 
   return (
     <div className="QuestList">
-      <div className="button" onClick={newQuest}>
-        + Add Quest
+      <div className="quest-list-tabs">
+        <span className="button" onClick={newQuest}>
+          + Add Quest
+        </span>
       </div>
       <ul>{listQuests}</ul>
     </div>
