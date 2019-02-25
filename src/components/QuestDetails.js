@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function QuestDetails(props) {
   const handleTitleChange = (event) => {
