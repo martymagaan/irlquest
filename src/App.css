@@ -56,7 +56,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 15px;
+  padding: 18px;
   border: 1px solid #777;
   border-left: 0;
 }
