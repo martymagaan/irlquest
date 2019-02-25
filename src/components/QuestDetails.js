@@ -9,10 +9,6 @@ function QuestDetails(props) {
     props.updateDetails(event.target.value);
   };
 
-  const deleteQuest = () => {
-    props.deleteQuest(props.quest);
-  };
-
   const confirmDelete = () => {
     props.setToggle(
       {...props.toggle, confirmDelete: true}
