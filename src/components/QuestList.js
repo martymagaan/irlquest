@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function QuestList(props) {
-  const [selected, setSelected] = useState(0);
-
   const newQuest = () => {
     props.addQuest({title: 'New Quest', details: ''});
     props.setCurrentQuest(0);
-    setSelected(0);
   };
 
   const selectQuest = (index) => {
     props.setCurrentQuest(index);
-    setSelected(index);
   };
 
   const listQuests = props.quests.map((quest, index) =>
     <li key={index.toString()}
-      className={selected === index ? "selected" : ""}
+      className={props.currentQuest === index ? "selected" : ""}
       onClick={() => selectQuest(index)}
     >
       {quest.title}
