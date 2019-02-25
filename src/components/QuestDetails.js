@@ -13,6 +13,12 @@ function QuestDetails(props) {
     props.deleteQuest(props.quest);
   };
 
+  const confirmDelete = () => {
+    props.setToggle(
+      {...props.toggle, confirmDelete: true}
+    );
+  };
+
   return (
     <div className="QuestDetails">
       <input className="quest-title-input input"
@@ -25,7 +31,7 @@ function QuestDetails(props) {
         onChange={handleDetailsChange}
       />
       <div className="quest-options-bar row">
-        <div className="button" onClick={deleteQuest}>
+        <div className="button" onClick={confirmDelete}>
           - Delete Quest
         </div>
       </div>

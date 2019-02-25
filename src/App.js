@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import QuestList from './components/QuestList';
 import QuestDetails from './components/QuestDetails';
+import Overlay from './components/Overlay';
 
 function App() {
   const exampleQuests = [
@@ -12,6 +13,9 @@ function App() {
 
   const [quests, setQuests] = useState(exampleQuests);
   const [currentQuest, setCurrentQuest] = useState(0);
+  const [toggle, setToggle] = useState({
+    confirmDelete: false
+  });
 
   const copyQuests = () => (
     quests.map(quest => ({...quest}))
@@ -25,11 +29,10 @@ function App() {
     [{title: 'New Quest', details: ''}]
   );
 
-  const deleteQuest = (quest) => {
-    const index = quests.indexOf(quest);
+  const deleteQuest = () => {
     setQuests(
-      quests.slice(0, index)
-        .concat(quests.slice(index + 1))
+      quests.slice(0, currentQuest)
+        .concat(quests.slice(currentQuest + 1))
     );
     if (quests.length < 2) emptyQuest();
     setCurrentQuest(0);
@@ -67,9 +70,15 @@ function App() {
           quest={quests[currentQuest]}
           updateTitle={updateTitle}
           updateDetails={updateDetails}
-          deleteQuest={deleteQuest}
+          toggle={toggle}
+          setToggle={setToggle}
         />
       </div>
+      <Overlay
+        deleteQuest={deleteQuest}
+        toggle={toggle}
+        setToggle={setToggle}
+      />
     </div>
   );
 }
