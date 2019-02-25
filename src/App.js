@@ -61,6 +61,7 @@ function App() {
       <div className="container row">
         <QuestList
           quests={quests}
+          currentQuest= {currentQuest}
           addQuest={addQuest}
           deleteQuest={deleteQuest}
           emptyQuest={emptyQuest}
