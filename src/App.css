@@ -45,17 +45,6 @@ html, body, #root {
   cursor: pointer;
 }
 
-.t-button {
-  position: absolute;
-  top: 0;
-  right: 3px;
-  padding: 8px;
-  line-height: 0.4em;
-  font-weight: 700;
-  cursor: pointer;
-  user-select: none;
-}
-
 .QuestList ul {
   width: 100%;
   margin: 0;
@@ -64,7 +53,6 @@ html, body, #root {
 }
 
 .QuestList li {
-  position: relative;
   padding: 10px 15px;
   cursor: pointer;
 }
@@ -76,7 +64,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 18px;
+  padding: 18px 18px 10px;
   border: 1px solid #777;
   border-left: 0;
 }
@@ -107,4 +95,8 @@ html, body, #root {
   resize: none;
   outline: none;
   overflow: hidden;
+}
+
+.quest-options-bar {
+  width: 100%;
 }
