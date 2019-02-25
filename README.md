@@ -3,8 +3,9 @@
 A quest menu for real life.
 
 ## TODO
-+ Delete quest function
-+ Timestamps
++ Move delete button to QuestDetails
++ Confirm delete quest
++ TIMESTAMPS
 + Completed Quests
 + Persistent data
   + Signup/Login
