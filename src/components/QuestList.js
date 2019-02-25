@@ -6,6 +6,7 @@ function QuestList(props) {
   const newQuest = () => {
     props.addQuest({title: 'New Quest', details: ''});
     props.setCurrentQuest(0);
+    setSelected(0);
   };
 
   const selectQuest = (index) => {
