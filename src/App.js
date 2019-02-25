@@ -5,55 +5,50 @@ import QuestDetails from './components/QuestDetails';
 import Overlay from './components/Overlay';
 
 function App() {
-  const exampleQuests = [
-    {title: 'Quest 1', details: 'Details of quest.'},
-    {title: 'Quest 2', details: 'Details of quest.'},
-    {title: 'Quest 3', details: 'Details of quest.'}
-  ];
+  const questTemplate = {
+    title: 'New Quest',
+    details: ''
+  };
 
-  const [quests, setQuests] = useState(exampleQuests);
+  const [quests, setQuests] = useState([questTemplate]);
   const [currentQuest, setCurrentQuest] = useState(0);
   const [toggle, setToggle] = useState({
     confirmDelete: false
   });
 
-  const copyQuests = () => (
-    quests.map(quest => ({...quest}))
-  );
-
-  const addQuest = (quest) => {
-    setQuests([quest, ...quests]);
+  const addQuest = () => {
+    setQuests([questTemplate, ...quests]);
+    setCurrentQuest(0);
   };
-
-  const emptyQuest = () => setQuests(
-    [{title: 'New Quest', details: ''}]
-  );
 
   const deleteQuest = () => {
     setQuests(
       quests.slice(0, currentQuest)
         .concat(quests.slice(currentQuest + 1))
     );
-    if (quests.length < 2) emptyQuest();
+    if (quests.length < 2)
+      setQuests([questTemplate]);
     setCurrentQuest(0);
   };
 
   const updateCurrentQuest = (quest) => {
-    const questsCopy = copyQuests();
+    const questsCopy = quests.map(quest => ({...quest}));
     questsCopy[currentQuest] = quest;
     setQuests(questsCopy);
-  }
+  };
 
   const updateTitle = (title) => {
-    updateCurrentQuest(
-      {...quests[currentQuest], title}
-    );
+    updateCurrentQuest({
+      ...quests[currentQuest],
+      title
+    });
   };
 
   const updateDetails = (details) => {
-    updateCurrentQuest(
-      {...quests[currentQuest], details}
-    );
+    updateCurrentQuest({
+      ...quests[currentQuest],
+      details
+    });
   };
 
   return (
@@ -62,10 +57,8 @@ function App() {
         <QuestList
           quests={quests}
           currentQuest= {currentQuest}
-          addQuest={addQuest}
-          deleteQuest={deleteQuest}
-          emptyQuest={emptyQuest}
           setCurrentQuest={setCurrentQuest}
+          addQuest={addQuest}
         />
         <QuestDetails
           quest={quests[currentQuest]}
