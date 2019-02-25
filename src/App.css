@@ -41,7 +41,19 @@ html, body, #root {
 }
 
 .button {
+  display: inline-block;
   cursor: pointer;
+}
+
+.t-button {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  padding: 8px;
+  line-height: 0.4em;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
 }
 
 .QuestList ul {
@@ -52,6 +64,7 @@ html, body, #root {
 }
 
 .QuestList li {
+  position: relative;
   padding: 10px 15px;
   cursor: pointer;
 }
