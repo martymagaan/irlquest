@@ -2,7 +2,15 @@ import React from 'react';
 
 function QuestList(props) {
   const newQuest = () => {
-    props.addQuest({title: 'New Quest', details: ''})
+    props.addQuest({title: 'New Quest', details: ''});
+    props.setCurrentQuest(0);
+  };
+
+  const deleteQuest = async (e, index) => {
+    e.stopPropagation();
+    props.deleteQuest(index);
+    if (props.quests.length === 1)
+      props.emptyQuest();
   };
 
   const listQuests = props.quests.map((quest, index) =>
@@ -10,17 +18,24 @@ function QuestList(props) {
       onClick={() => props.setCurrentQuest(index)}
     >
       {quest.title}
+      <div className="t-button"
+        onClick={(e) => deleteQuest(e, index)}
+      >
+        -
+      </div>
     </li>
   );
 
   return (
     <div className="QuestList">
       <div className="quest-list-tabs">
-        <span className="button" onClick={newQuest}>
+        <div className="button" onClick={newQuest}>
           + Add Quest
-        </span>
+        </div>
       </div>
-      <ul>{listQuests}</ul>
+      {props.quests ? <ul>{listQuests}</ul>
+        : <div className="note">No quests started</div>
+      }
     </div>
   );
 }

@@ -13,8 +13,22 @@ function App() {
   const [quests, setQuests] = useState(exampleQuests);
   const [currentQuest, setCurrentQuest] = useState(0);
 
-  const copyQuests = () => quests.map(quest => ({...quest}));
-  const addQuest = (quest) => setQuests([quest, ...quests]);
+  const copyQuests = () => (
+    quests.map(quest => ({...quest}))
+  );
+
+  const addQuest = (quest) => {
+    setQuests([quest, ...quests]);
+  };
+
+  const emptyQuest = () => setQuests(
+    [{title: 'New Quest', details: ''}]
+  );
+
+  const deleteQuest = (index) => (setQuests(
+    quests.slice(0, index)
+      .concat(quests.slice(index + 1))
+  ));
 
   const updateCurrentQuest = (quest) => {
     const questsCopy = copyQuests();
@@ -36,6 +50,8 @@ function App() {
         <QuestList
           quests={quests}
           addQuest={addQuest}
+          deleteQuest={deleteQuest}
+          emptyQuest={emptyQuest}
           setCurrentQuest={setCurrentQuest}
         />
         <QuestDetails
