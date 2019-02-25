@@ -57,7 +57,11 @@ html, body, #root {
   cursor: pointer;
 }
 .QuestList li:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+}
+
+.selected, .selected:hover {
+  background: rgba(255,255,255,0.1) !important;
 }
 
 .QuestDetails {
