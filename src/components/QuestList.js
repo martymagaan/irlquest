@@ -6,23 +6,11 @@ function QuestList(props) {
     props.setCurrentQuest(0);
   };
 
-  const deleteQuest = async (e, index) => {
-    e.stopPropagation();
-    props.deleteQuest(index);
-    if (props.quests.length === 1)
-      props.emptyQuest();
-  };
-
   const listQuests = props.quests.map((quest, index) =>
     <li key={index.toString()}
       onClick={() => props.setCurrentQuest(index)}
     >
       {quest.title}
-      <div className="t-button"
-        onClick={(e) => deleteQuest(e, index)}
-      >
-        -
-      </div>
     </li>
   );
 

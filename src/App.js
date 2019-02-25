@@ -25,10 +25,15 @@ function App() {
     [{title: 'New Quest', details: ''}]
   );
 
-  const deleteQuest = (index) => (setQuests(
-    quests.slice(0, index)
-      .concat(quests.slice(index + 1))
-  ));
+  const deleteQuest = (quest) => {
+    const index = quests.indexOf(quest);
+    setQuests(
+      quests.slice(0, index)
+        .concat(quests.slice(index + 1))
+    );
+    if (quests.length < 2) emptyQuest();
+    setCurrentQuest(0);
+  };
 
   const updateCurrentQuest = (quest) => {
     const questsCopy = copyQuests();
@@ -37,11 +42,15 @@ function App() {
   }
 
   const updateTitle = (title) => {
-    updateCurrentQuest({...quests[currentQuest], title});
+    updateCurrentQuest(
+      {...quests[currentQuest], title}
+    );
   };
 
   const updateDetails = (details) => {
-    updateCurrentQuest({...quests[currentQuest], details});
+    updateCurrentQuest(
+      {...quests[currentQuest], details}
+    );
   };
 
   return (
@@ -58,6 +67,7 @@ function App() {
           quest={quests[currentQuest]}
           updateTitle={updateTitle}
           updateDetails={updateDetails}
+          deleteQuest={deleteQuest}
         />
       </div>
     </div>

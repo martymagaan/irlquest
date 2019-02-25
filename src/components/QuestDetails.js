@@ -9,6 +9,10 @@ function QuestDetails(props) {
     props.updateDetails(event.target.value);
   };
 
+  const deleteQuest = () => {
+    props.deleteQuest(props.quest);
+  };
+
   return (
     <div className="QuestDetails">
       <input className="quest-title-input input"
@@ -20,6 +24,11 @@ function QuestDetails(props) {
         value={props.quest.details}
         onChange={handleDetailsChange}
       />
+      <div className="quest-options-bar row">
+        <div className="button" onClick={deleteQuest}>
+          - Delete Quest
+        </div>
+      </div>
     </div>
   );
 }
