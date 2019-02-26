@@ -3,8 +3,9 @@
 A quest menu for real life.
 
 ## TODO
-+ Completed Quests
++ Welcome screen
 + Persistent data
+  + Local persistence
   + Signup/Login
   + Database
   + Save to database after typing with delay
