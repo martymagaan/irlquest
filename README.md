@@ -3,7 +3,6 @@
 A quest menu for real life.
 
 ## TODO
-+ Timestamps
 + Completed Quests
 + Persistent data
   + Signup/Login
