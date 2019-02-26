@@ -3,6 +3,7 @@ import './App.css';
 import QuestList from './components/QuestList';
 import QuestDetails from './components/QuestDetails';
 import Overlay from './components/Overlay';
+import Welcome from './components/Welcome';
 
 function App() {
   const newQuest = () => ({
@@ -14,7 +15,7 @@ function App() {
     status: 'In Progress'
   });
 
-  const [quests, setQuests] = useState([newQuest()]);
+  const [quests, setQuests] = useState([]);
   const [currentQuest, setCurrentQuest] = useState(0);
   const [tab, setTab] = useState('In Progress');
   const [toggle, setToggle] = useState({
@@ -71,7 +72,7 @@ function App() {
           toggle={toggle}
           setToggle={setToggle}
         />
-        ) : null}
+        ) : <Welcome />}
       </div>
       <Overlay
         toggle={toggle}
