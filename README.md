@@ -2,7 +2,7 @@
 
 An RPG-like quest menu for real life.
 
-**See running build [here](https://irlquest.martymagaan.com)**
+**See running build [here](http://irlquest.martymagaan.com)**
 
 ## TODO
 + Persistent data
