@@ -70,6 +70,15 @@ html, body, #root {
   background: rgba(255,255,255,0.05);
 }
 
+.QuestList li.message {
+  color: #555;
+  font-style: italic;
+  cursor: default;
+}
+.QuestList li.message:hover {
+  background: transparent;
+}
+
 .selected, .selected:hover {
   background: rgba(255,255,255,0.1) !important;
 }
