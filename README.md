@@ -1,6 +1,6 @@
 # IRL Quest
 
-A quest menu for real life.
+An RPG-like quest menu for real life.
 
 ## TODO
 + Persistent data
