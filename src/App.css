@@ -51,6 +51,10 @@ html, body, #root {
   cursor: pointer;
 }
 
+.right {
+  float: right;
+}
+
 .QuestList ul {
   width: 100%;
   margin: 0;
@@ -150,6 +154,7 @@ html, body, #root {
   align-self: center;
   background: #222;
   border: 1px solid #777;
+  border-radius: 5px;
   text-align: center;
   pointer-events: auto;
 }
