@@ -27,6 +27,22 @@ function QuestDetails(props) {
         value={props.quest.title}
         onChange={handleTitleChange}
       />
+      <div className="quest-time-info row">
+        <div className="row-item">
+          Date Embarked:&nbsp;
+          <span className="timestamp">
+            {props.quest.started}
+          </span>
+        </div>
+        {props.quest.updated ? (
+        <div className="row-item">
+          Last Update:&nbsp; 
+          <span className="timestamp">
+            {props.quest.updated}
+          </span>
+        </div>
+        ) : null}
+      </div>
       <textarea className="quest-details input"
         placeholder="Describe quest details"
         value={props.quest.details}

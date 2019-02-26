@@ -5,19 +5,21 @@ import QuestDetails from './components/QuestDetails';
 import Overlay from './components/Overlay';
 
 function App() {
-  const questTemplate = {
+  const newQuest = () => ({
     title: 'New Quest',
-    details: ''
-  };
+    details: '',
+    started: new Date().toLocaleString(),
+    updated: null
+  });
 
-  const [quests, setQuests] = useState([questTemplate]);
+  const [quests, setQuests] = useState([newQuest()]);
   const [currentQuest, setCurrentQuest] = useState(0);
   const [toggle, setToggle] = useState({
     confirmDelete: false
   });
 
   const addQuest = () => {
-    setQuests([questTemplate, ...quests]);
+    setQuests([newQuest(), ...quests]);
     setCurrentQuest(0);
   };
 
@@ -27,13 +29,16 @@ function App() {
         .concat(quests.slice(currentQuest + 1))
     );
     if (quests.length < 2)
-      setQuests([questTemplate]);
+      setQuests([newQuest()]);
     setCurrentQuest(0);
   };
 
   const updateQuest = (quest) => {
     const questsCopy = quests.map(quest => ({...quest}));
-    questsCopy[currentQuest] = quest;
+    questsCopy[currentQuest] = {
+      ...quest,
+      updated: new Date().toLocaleString()
+    };
     setQuests(questsCopy);
   };
 
