@@ -9,13 +9,17 @@ function App() {
     title: 'New Quest',
     details: '',
     started: new Date().toLocaleString(),
-    updated: null
+    updated: null,
+    completed: null,
+    status: 'In Progress'
   });
 
   const [quests, setQuests] = useState([newQuest()]);
   const [currentQuest, setCurrentQuest] = useState(0);
+  const [tab, setTab] = useState('In Progress');
   const [toggle, setToggle] = useState({
-    confirmDelete: false
+    confirmDelete: false,
+    confirmComplete: false
   });
 
   const addQuest = () => {
@@ -28,8 +32,6 @@ function App() {
       quests.slice(0, currentQuest)
         .concat(quests.slice(currentQuest + 1))
     );
-    if (quests.length < 2)
-      setQuests([newQuest()]);
     setCurrentQuest(0);
   };
 
@@ -42,26 +44,40 @@ function App() {
     setQuests(questsCopy);
   };
 
+  const completeQuest = () => {
+    updateQuest({
+      ...quests[currentQuest],
+      completed: new Date().toLocaleString(),
+      status: 'Completed'
+    });
+    setTab('Completed');
+  };
+
   return (
     <div className="App">
       <div className="container row">
         <QuestList
           quests={quests}
-          currentQuest= {currentQuest}
+          currentQuest={currentQuest}
+          tab={tab}
+          setTab={setTab}
           setCurrentQuest={setCurrentQuest}
           addQuest={addQuest}
         />
+        {quests.length > 0 ? (
         <QuestDetails
           quest={quests[currentQuest]}
           updateQuest={updateQuest}
           toggle={toggle}
           setToggle={setToggle}
         />
+        ) : null}
       </div>
       <Overlay
-        deleteQuest={deleteQuest}
         toggle={toggle}
         setToggle={setToggle}
+        deleteQuest={deleteQuest}
+        completeQuest={completeQuest}
       />
     </div>
   );

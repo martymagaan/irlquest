@@ -25,6 +25,21 @@ function Overlay (props) {
         </div>
       </div>
       ) : null }
+      {props.toggle.confirmComplete ? (
+      <div className="overlay-shade" onClick={untoggle}>
+        <div className="overlay-panel">
+          <p>Quest Completed?</p>
+          <button className="overlay-button"
+            onClick={props.completeQuest}
+          >
+            Yes
+          </button>
+          <button className="overlay-button" onClick={untoggle}>
+            No
+          </button>
+        </div>
+      </div>
+      ) : null }
     </div>
   );
 }

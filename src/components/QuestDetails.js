@@ -21,6 +21,12 @@ function QuestDetails(props) {
     );
   };
 
+  const confirmComplete = () => {
+    props.setToggle(
+      {...props.toggle, confirmComplete: true}
+    );
+  };
+
   return (
     <div className="QuestDetails">
       <input className="quest-title-input input"
@@ -42,15 +48,26 @@ function QuestDetails(props) {
           </span>
         </div>
         ) : null}
+        {props.quest.completed ? (
+        <div className="row-item">
+          Date Completed:&nbsp; 
+          <span className="timestamp">
+            {props.quest.completed}
+          </span>
+        </div>
+        ) : null}
       </div>
       <textarea className="quest-details input"
         placeholder="Describe quest details"
         value={props.quest.details}
         onChange={handleDetailsChange}
       />
-      <div className="quest-options-bar row">
+      <div className="quest-options-bar">
         <div className="button" onClick={confirmDelete}>
           - Delete Quest
+        </div>
+        <div className="button right" onClick={confirmComplete}>
+          Complete Quest
         </div>
       </div>
     </div>
