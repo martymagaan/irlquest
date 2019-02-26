@@ -31,24 +31,10 @@ function App() {
     setCurrentQuest(0);
   };
 
-  const updateCurrentQuest = (quest) => {
+  const updateQuest = (quest) => {
     const questsCopy = quests.map(quest => ({...quest}));
     questsCopy[currentQuest] = quest;
     setQuests(questsCopy);
-  };
-
-  const updateTitle = (title) => {
-    updateCurrentQuest({
-      ...quests[currentQuest],
-      title
-    });
-  };
-
-  const updateDetails = (details) => {
-    updateCurrentQuest({
-      ...quests[currentQuest],
-      details
-    });
   };
 
   return (
@@ -62,8 +48,7 @@ function App() {
         />
         <QuestDetails
           quest={quests[currentQuest]}
-          updateTitle={updateTitle}
-          updateDetails={updateDetails}
+          updateQuest={updateQuest}
           toggle={toggle}
           setToggle={setToggle}
         />

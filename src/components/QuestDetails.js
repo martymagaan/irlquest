@@ -2,11 +2,17 @@ import React from 'react';
 
 function QuestDetails(props) {
   const handleTitleChange = (event) => {
-    props.updateTitle(event.target.value);
+    props.updateQuest({
+      ...props.quest,
+      title: event.target.value
+    });
   };
 
   const handleDetailsChange = (event) => {
-    props.updateDetails(event.target.value);
+    props.updateQuest({
+      ...props.quest,
+      details: event.target.value
+    });
   };
 
   const confirmDelete = () => {
