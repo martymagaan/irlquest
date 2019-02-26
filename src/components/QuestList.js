@@ -15,19 +15,31 @@ function QuestList(props) {
   return (
     <div className="QuestList">
       <div className="quest-list-tabs">
-        <div className="button row-item" onClick={() => props.setTab('In Progress')}>
-          [ ]
+        <div
+          className="button row-item"
+          onClick={() => props.setTab('In Progress')}
+        >
+          [In Progress]
         </div>
-        <div className="button row-item" onClick={() => props.setTab('Completed')}>
-          [v]
+        <div
+          className="button row-item"
+          onClick={() => props.setTab('Completed')}
+        >
+          [Completed]
         </div>
       </div>
        <ul>
-          {props.tab === 'In Progress' ? (
+          {props.tab === 'In Progress' ? ([
+          <li className="list-section-head">
+            Quests In Progress
+          </li>,
           <li onClick={props.addQuest}>
             + Start New Quest
           </li>
-          ) : null}
+          ]) : (
+          <li className="list-section-head">
+            Completed Quests
+          </li>)}
          {(listQuests.filter(item => item)).length > 0 ? listQuests : (
          <li className="message">
            Empty

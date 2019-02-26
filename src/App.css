@@ -76,12 +76,22 @@ h1 {
   background: rgba(255,255,255,0.05);
 }
 
+.QuestList li.list-section-head {
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  font-weight: bold;
+  cursor: default;
+}
+.QuestList li.list-section-head {
+  background: transparent;
+}
+
 .QuestList li.message {
   color: #555;
   font-style: italic;
   cursor: default;
 }
-.QuestList li.message:hover {
+.QuestList li.message:hover{
   background: transparent;
 }
 
