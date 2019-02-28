@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import QuestList from './components/QuestList';
 import QuestDetails from './components/QuestDetails';
@@ -15,12 +15,22 @@ function App() {
     status: 'In Progress'
   });
 
-  const [quests, setQuests] = useState([]);
+  const loadQuests = () => {
+    const data = localStorage.getItem('quests');
+    return data ? JSON.parse(data) : [];
+  };
+
+  const [quests, setQuests] = useState(loadQuests());
   const [currentQuest, setCurrentQuest] = useState(0);
   const [tab, setTab] = useState('In Progress');
   const [toggle, setToggle] = useState({
     confirmDelete: false,
     confirmComplete: false
+  });
+
+  useEffect(() => {
+    const data = JSON.stringify(quests);
+    localStorage.setItem('quests', data);
   });
 
   const addQuest = () => {
