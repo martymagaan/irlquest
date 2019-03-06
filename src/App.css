@@ -115,14 +115,19 @@ header {
 }
 
 .side-button {
-  padding: 12px 15px;
-  line-height: 1.1em;
+  padding: 13px 15px;
+  background: #262626;
+  font-size: 14px;
+  line-height: 1.2em;
   cursor: pointer;
   user-select: none;
 }
+.side-button:hover {
+  color: #eee;
+}
 
-.QuestList li:hover, .side-button:hover {
-  background: rgba(255,255,255,0.05);
+.QuestList li:hover {
+  background: rgba(255,255,255,0.03);
 }
 
 .QuestList .list-section-head {
@@ -140,7 +145,7 @@ header {
 }
 
 .selected, .selected:hover {
-  background: rgba(255,255,255,0.1) !important;
+  background: rgba(255,255,255,0.08) !important;
 }
 
 .Welcome {
@@ -248,4 +253,7 @@ header {
   font: 16px Arial, sans-serif;
   cursor: pointer;
   outline: none;
+}
+.overlay-button:hover {
+  background: #2c2c2c;
 }
