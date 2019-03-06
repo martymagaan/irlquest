@@ -15,11 +15,21 @@ h1 {
 .App {
   width: 100%;
   height: 100%;
-  padding: 40px 0;
   background: #222;
   color: #ccc;
   font: 16px Arial, sans-serif;
   line-height: 1.2em;
+}
+
+header {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+#logo {
+  width: 80px;
+  height: auto;
 }
 
 .container {
@@ -28,7 +38,7 @@ h1 {
   width: 1200px;
   height: 80%;
   margin: 0 auto;
-  border: 1px solid #777;
+  background: #2c2c2c;
   border-radius: 5px;
 }
 
@@ -41,21 +51,50 @@ h1 {
   margin-right: 10px;
 }
 
+.icon-sm {
+  width: auto;
+  height: 16px;
+  margin-right: 7px;
+  vertical-align: top;
+}
+
 .QuestList {
   display: flex;
   flex-direction: column;
   flex: 0 0 250px;
-  border-right: 1px solid #777;
+  border-right: 2px solid #222;
 }
 
-.quest-list-tabs {
-  padding: 12px;
+.quest-tabs-bar {
   font-size: 13px;
-  text-decoration: underline;
+}
+
+.quest-tabs-bar div {
+  flex: 1;
+  padding: 12px 12px 12px;
+  border-bottom: 2px solid #222;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tab-selected {
+  border-bottom: 4px solid #ccc !important;
+  margin-bottom: 0;
+}
+
+.quest-tabs-bar div:hover {
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 0;
 }
 
 .button {
   display: inline-block;
+  cursor: pointer;
+}
+.button:hover {
+  display: inline-block;
+  color: #eee;
   cursor: pointer;
 }
 
@@ -71,12 +110,13 @@ h1 {
 }
 
 .QuestList li {
-  padding: 10px 15px;
+  padding: 12px 15px;
   cursor: pointer;
 }
 
 .side-button {
-  padding: 10px 15px;
+  padding: 12px 15px;
+  line-height: 1.1em;
   cursor: pointer;
   user-select: none;
 }
@@ -156,13 +196,11 @@ h1 {
   outline: none;
   overflow: hidden;
 }
-.quest-details:focus {
-  border-bottom: 1px solid #aaa;
-}
 
 .quest-options-bar {
   width: 100%;
   padding: 10px 0 3px;
+  line-height: 1.1em;
 }
 
 .Overlay {
