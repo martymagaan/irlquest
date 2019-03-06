@@ -14,31 +14,26 @@ function QuestList(props) {
 
   return (
     <div className="QuestList">
-      <div className="quest-list-tabs">
+      <div className="quest-tabs-bar row">
         <div
-          className="button row-item"
+          className={props.tab === 'In Progress' ? "tab-selected" : ""}
           onClick={() => props.setTab('In Progress')}
         >
           In Progress
         </div>
         <div
-          className="button row-item"
+          className={props.tab === 'Completed' ? "tab-selected" : ""}
           onClick={() => props.setTab('Completed')}
         >
           Completed
         </div>
       </div>
-      {props.tab === 'In Progress' ? (<>
-      <div className="list-section-head">
-        Quests In Progress
-      </div>
+      {props.tab === 'In Progress' ? (
       <div className="side-button" onClick={props.addQuest}>
-        + Start New Quest
+        <img className="icon-sm" src="img/plus.svg" alt="Plus icon"  />
+        Start New Quest
       </div>
-      </>) : (
-      <div className="list-section-head">
-        Completed Quests
-      </div>)}
+      ) : null}
       {(listQuests.filter(item => item)).length > 0 ? (
       <ul>{listQuests}</ul>) : (
       <div className="message">

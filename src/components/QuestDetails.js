@@ -64,9 +64,11 @@ function QuestDetails(props) {
       />
       <div className="quest-options-bar">
         <div className="button" onClick={confirmDelete}>
-          - Delete Quest
+          <img className="icon-sm" src="img/minus.svg" alt="Minus icon" />
+          Delete Quest
         </div>
         <div className="button right" onClick={confirmComplete}>
+          <img className="icon-sm" src="img/check.svg" alt="Check icon" />
           Complete Quest
         </div>
       </div>
