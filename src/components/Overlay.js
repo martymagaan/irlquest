@@ -16,6 +16,7 @@ function Overlay (props) {
           <p>Delete quest?</p>
           <button className="overlay-button"
             onClick={props.deleteQuest}
+            autofocus="true"
           >
             Yes
           </button>
@@ -31,6 +32,7 @@ function Overlay (props) {
           <p>Quest Completed?</p>
           <button className="overlay-button"
             onClick={props.completeQuest}
+            autofocus="true"
           >
             Yes
           </button>
