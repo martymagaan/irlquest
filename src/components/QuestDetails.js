@@ -67,10 +67,12 @@ function QuestDetails(props) {
           <img className="icon-sm" src="img/minus.svg" alt="Minus icon" />
           Delete Quest
         </div>
+        {props.quest.status === 'In Progress' ? (
         <div className="button right" onClick={confirmComplete}>
           <img className="icon-sm" src="img/check.svg" alt="Check icon" />
           Complete Quest
         </div>
+        ) : null}
       </div>
     </div>
   );
