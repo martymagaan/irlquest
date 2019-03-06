@@ -90,11 +90,13 @@ header {
 
 .button {
   display: inline-block;
+  font-size: 14px;
+  line-height: 1.2em;
   cursor: pointer;
 }
 .button:hover {
   display: inline-block;
-  color: #eee;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -123,7 +125,7 @@ header {
   user-select: none;
 }
 .side-button:hover {
-  color: #eee;
+  color: #fff;
 }
 
 .QuestList li:hover {
