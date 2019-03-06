@@ -66,6 +66,9 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <img id="logo" src='img/irlquest.svg' alt="Logo" />
+      </header>
       <div className="container row">
         <QuestList
           quests={quests}
