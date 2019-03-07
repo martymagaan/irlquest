@@ -5,10 +5,8 @@ An RPG-like quest menu for real life.
 **See running build [here](http://irlquest.martymagaan.com)**
 
 ## TODO
-+ List Pages
 + User system
   + Signup/Login
   + Database
   + Save to database after typing with delay
-+ Better UI
-+ Responsive styles
++ Mobile responsive
