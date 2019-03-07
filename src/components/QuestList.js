@@ -1,11 +1,16 @@
 import React from 'react';
 
 function QuestList(props) {
+  const setCurrentQuest = (index) => {
+    props.setCurrentQuest(index);
+    window.scrollTo(0,0);
+  };
+
   const listQuests = props.quests.map((quest, index) =>
     quest.status === props.tab ? (
     <li key={index.toString()}
       className={props.currentQuest === index ? "selected" : ""}
-      onClick={() => props.setCurrentQuest(index)}
+      onClick={() => setCurrentQuest(index)}
     >
       {quest.title}
     </li>
