@@ -81,11 +81,12 @@ header {
 .tab-selected {
   border-bottom: 4px solid #ccc !important;
   margin-bottom: 0;
+  color: #fff;
 }
 
 .quest-tabs-bar div:hover {
-  border-bottom: 2px solid #ccc;
   margin-bottom: 0;
+  color: #fff;
 }
 
 .button {
