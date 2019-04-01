@@ -1,6 +1,6 @@
 html, body, #root {
   height: 100%;
-  background: #1f1f1f;
+  background: #151515;
 }
 
 * {
@@ -160,6 +160,37 @@ header {
   font-size: 14px;
 }
 
+.Welcome form {
+  margin: 20px 0;
+}
+
+.Welcome input[type='text'] {
+  width: 300px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid #555;
+  margin: 10px 0;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+.Welcome input[type='text']:focus {
+  border-color: #aaa;
+}
+
+.Welcome input[type='submit'] {
+  padding: 10px 15px;
+  border: 1px solid #aaa;
+  margin: 5px 0;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+.Welcome input[type='submit']:hover {
+  background: #111;
+}
+
 .QuestDetails {
   display: flex;
   flex-direction: column;
@@ -261,5 +292,5 @@ header {
   outline: none;
 }
 .overlay-button:hover {
-  background: #2d2d2d;
+  background: #111;
 }
