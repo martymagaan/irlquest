@@ -2,17 +2,21 @@ import React from 'react';
 
 function QuestDetails(props) {
   const handleTitleChange = (event) => {
-    props.updateQuest({
-      ...props.quest,
-      title: event.target.value
-    });
+    if (event.target.value.length < 100) {
+      props.updateQuest({
+        ...props.quest,
+        title: event.target.value
+      });
+    }
   };
 
   const handleDetailsChange = (event) => {
-    props.updateQuest({
-      ...props.quest,
-      details: event.target.value
-    });
+    if (event.target.value.length < 100000) {
+      props.updateQuest({
+        ...props.quest,
+        details: event.target.value
+      });
+    }
   };
 
   const confirmDelete = () => {
